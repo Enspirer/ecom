@@ -1,0 +1,11 @@
+.new-nav p {
+    margin-bottom: 0!important;
+}
+
+.dropdown-toggle {
+    display: inline-block!important;
+}
+
+nav .nav-link.active {
+    color: #FF0000!important;
+}

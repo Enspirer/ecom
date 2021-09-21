@@ -51,6 +51,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
 
     <!-- CSS Files -->
+    @stack('before-styles')
     <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
     @if(\App\Language::where('code', Session::get('locale', Config::get('app.locale')))->first()->rtl == 1)
     <link rel="stylesheet" href="{{ static_asset('assets/css/bootstrap-rtl.min.css') }}">
@@ -59,6 +60,10 @@
     <link rel="stylesheet" href="{{ static_asset('assets/css/custom-style.css') }}">
 
     <link rel="stylesheet" href="{{ static_asset('assets/css/imzframe.css') }}">
+
+    <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    @stack('after-styles')
 
 
     <script>
@@ -214,8 +219,12 @@
     @yield('modal')
 
     <!-- SCRIPTS -->
+    @stack('before-scripts')
     <script src="{{ static_asset('assets/js/vendors.js') }}"></script>
     <script src="{{ static_asset('assets/js/aiz-core.js') }}"></script>
+    <script src="https://kit.fontawesome.com/aa4e69f91b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    @stack('after-scripts')
 
 
 
