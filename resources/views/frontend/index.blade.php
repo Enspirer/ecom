@@ -94,177 +94,24 @@
         </div>
     </div>
 
-
+    {{-- Featured Section --}}
     <div class="container text-center" style="margin-top: 7rem;">
         <h3>New Trending Products</h3>
         <p class="mt-3">Description area and you can type any thing you want to display your customer</p>
 
-        <div class="swiper mySwiper2 mt-5">
-            <div class="swiper-wrapper">
-                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
-                    <div class="product-thumb">
-                        <div class="product-inner">
-                            <div class="product-image">
-                                <div class="label-product label-new">New</div>
-                                <a href="single-product.html">
-                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
-                                </a>
-                                <div class="action-links">
-                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                                </div>
-                            </div> <!-- end of product-image -->
-
-                            <div class="product-caption">
-                                <div class="product-meta d-flex justify-content-between align-items-center">
-                                    <div class="product-manufacturer">
-                                        <a href="#">Studio Design</a>
-                                    </div>
-                                    <div class="product-ratings">
-                                        <div class="rating-box">
-                                            <ul class="rating d-flex">
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
-                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
-                            </div><!-- end of product-caption -->
-                        </div><!-- end of product-inner -->
-                    </div><!-- end of product-thumb -->
-                </article>
-                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
-                    <div class="product-thumb">
-                        <div class="product-inner">
-                            <div class="product-image">
-                                <div class="label-product label-new">New</div>
-                                <a href="single-product.html">
-                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
-                                </a>
-                                <div class="action-links">
-                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                                </div>
-                            </div> <!-- end of product-image -->
-
-                            <div class="product-caption">
-                                <div class="product-meta d-flex justify-content-between align-items-center">
-                                    <div class="product-manufacturer">
-                                        <a href="#">Studio Design</a>
-                                    </div>
-                                    <div class="product-ratings">
-                                        <div class="rating-box">
-                                            <ul class="rating d-flex">
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
-                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
-                            </div><!-- end of product-caption -->
-                        </div><!-- end of product-inner -->
-                    </div><!-- end of product-thumb -->
-                </article>
-                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
-                    <div class="product-thumb">
-                        <div class="product-inner">
-                            <div class="product-image">
-                                <div class="label-product label-new">New</div>
-                                <a href="single-product.html">
-                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
-                                </a>
-                                <div class="action-links">
-                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                                </div>
-                            </div> <!-- end of product-image -->
-
-                            <div class="product-caption">
-                                <div class="product-meta d-flex justify-content-between align-items-center">
-                                    <div class="product-manufacturer">
-                                        <a href="#">Studio Design</a>
-                                    </div>
-                                    <div class="product-ratings">
-                                        <div class="rating-box">
-                                            <ul class="rating d-flex">
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
-                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
-                            </div><!-- end of product-caption -->
-                        </div><!-- end of product-inner -->
-                    </div><!-- end of product-thumb -->
-                </article>
-                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
-                    <div class="product-thumb">
-                        <div class="product-inner">
-                            <div class="product-image">
-                                <div class="label-product label-new">New</div>
-                                <a href="single-product.html">
-                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
-                                </a>
-                                <div class="action-links">
-                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                                </div>
-                            </div> <!-- end of product-image -->
-
-                            <div class="product-caption">
-                                <div class="product-meta d-flex justify-content-between align-items-center">
-                                    <div class="product-manufacturer">
-                                        <a href="#">Studio Design</a>
-                                    </div>
-                                    <div class="product-ratings">
-                                        <div class="rating-box">
-                                            <ul class="rating d-flex">
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                                <li><i class="ion ion-md-star-outline"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
-                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
-                            </div><!-- end of product-caption -->
-                        </div><!-- end of product-inner -->
-                    </div><!-- end of product-thumb -->
-                </article>
-
-
-
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
     </div>
+    <div id="section_featured">
+
+
+    </div>
+
+    {{-- Best Selling  --}}
+    <div id="section_best_selling">
+
+    </div>
+
+
+
 
     <div class="container-fluid mt-5" style='background-color: #F1F0F5;'>
         <div class="container">
@@ -467,4 +314,28 @@
         },
       });
     </script>
+
+        <script>
+            $(document).ready(function(){
+                $.post('{{ route('home.section.featured') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                    $('#section_featured').html(data);
+                    AIZ.plugins.slickCarousel();
+                });
+                $.post('{{ route('home.section.best_selling') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                    $('#section_best_selling').html(data);
+                    AIZ.plugins.slickCarousel();
+                });
+                $.post('{{ route('home.section.home_categories') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                    $('#section_home_categories').html(data);
+                    AIZ.plugins.slickCarousel();
+                });
+
+                @if (get_setting('vendor_system_activation') == 1)
+$.post('{{ route('home.section.best_sellers') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                    $('#section_best_sellers').html(data);
+                    AIZ.plugins.slickCarousel();
+                });
+                @endif
+            });
+        </script>
 @endpush
