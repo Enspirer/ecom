@@ -5,171 +5,92 @@
 @endpush
 
 @section('content')
+    @php
+        $num_todays_deal = count(filter_products(\App\Product::where('published', 1)->where('todays_deal', 1 ))->get());
+        $featured_categories = \App\Category::where('featured', 1)->get();
+    @endphp
+
     <div class="container-fluid">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper" style='background-color: #F1F0F5;'>
-                <div class="swiper-slide" >
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6" style="padding-top: 7rem;">
-                                <p style="font-size: 1.2rem;"><span class="p-2 mr-2" style="color: white; background-color: #FF0000;">LIMITED EDITION</span> Sale offer 20% Off this Week</p>
-                                <h1 class="mt-4 font-weight-bold">Super savvy</h1>
-                                <h1 class="font-weight-bold">limited time flash sale</h1>
+        @if (get_setting('home_slider_images') != null)
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" style='background-color: #F1F0F5;'>
+                    @php $slider_images = json_decode(get_setting('home_slider_images'), true);  @endphp
+                    @foreach ($slider_images as $key => $value)
+                        <div class="swiper-slide" >
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6" style="padding-top: 7rem;">
+                                        <p style="font-size: 1.2rem;"><span class="p-2 mr-2" style="color: white; background-color: #FF0000;">LIMITED EDITION</span> Sale offer 20% Off this Week</p>
+                                        <h1 class="mt-4 font-weight-bold">Super savvy</h1>
+                                        <h1 class="font-weight-bold">limited time flash sale</h1>
 
-                                <p class="mt-3">Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world.Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world</p>
-                            </div>
+                                        <p class="mt-3">Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world.Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world</p>
+                                    </div>
 
-                            <div class="col-6 text-right">
-                                <img src="{{ url('index/1.png') }}" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style='background-color: #F1F0F5;'>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6" style="padding-top: 7rem;">
-                                <p style="font-size: 1.2rem;"><span class="p-2 mr-2" style="color: white; background-color: #FF0000;">LIMITED EDITION</span> Sale offer 20% Off this Week</p>
-                                <h1 class="mt-4 font-weight-bold">Super savvy</h1>
-                                <h1 class="font-weight-bold">limited time flash sale</h1>
-
-                                <p class="mt-3">Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world.Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world</p>
-                            </div>
-
-                            <div class="col-6 text-right">
-                                <img src="{{ url('index/1.png') }}" alt="" class="img-fluid">
+                                    <div class="col-6 text-right">
+                                        <img src="{{ uploaded_asset($slider_images[$key]) }}" alt="" class="img-fluid">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>  
+                    @endforeach
                 </div>
-                <div class="swiper-slide" style='background-color: #F1F0F5;'>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6" style="padding-top: 7rem;">
-                                <p style="font-size: 1.2rem;"><span class="p-2 mr-2" style="color: white; background-color: #FF0000;">LIMITED EDITION</span> Sale offer 20% Off this Week</p>
-                                <h1 class="mt-4 font-weight-bold">Super savvy</h1>
-                                <h1 class="font-weight-bold">limited time flash sale</h1>
-
-                                <p class="mt-3">Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world.Our latest armchair collections have been crafted by some of the best interior, woodcrafter and also designers in the world</p>
-                            </div>
-
-                            <div class="col-6 text-right">
-                                <img src="{{ url('index/1.png') }}" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
     </div>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col p-0">
-                <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-5">
-                        <img src="{{ url('index/chair.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
-                    </div>
-                    <div class="col-7">
-                        <h4>Home <b>Decor</b></h4>
-                        <p>Our latest armchair collections have been crafted by some of the best interior.</p>
-
-                        <div class="mt-3">
-                            <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col p-0">
-                <div class="row pt-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-5">
-                        <img src="{{ url('index/girl.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
-                    </div>
-                    <div class="col-7">
-                        <h4>Home <b>Decor</b></h4>
-                        <p>Our latest armchair collections have been crafted by some of the best interior.</p>
-
-                        <div class="my-3">
-                            <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col p-0">
-                <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-5">
-                        <img src="{{ url('index/grocery.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
-                    </div>
-                    <div class="col-7">
-                        <h4>Home <b>Decor</b></h4>
-                        <p>Our latest armchair collections have been crafted by some of the best interior.</p>
-
-                        <div class="text-center mt-3">
-                            <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @endif
 
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col p-0">
-                <div class="row p-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-12" style="border: 1px solid white;">
-                        <div class="row align-items-center">
+            @if (count($featured_categories) > 0)
+                @foreach ($featured_categories as $key => $category)
+                    <div class="col p-0">
+                        <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
                             <div class="col-5">
-                                <h5 class="display-5" style="font-size: 1.6rem;">Women's Dresses Collection 2021</h5>
+                                <img src="{{ uploaded_asset($category->banner) }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
                             </div>
                             <div class="col-7">
-                                <img src="{{ url('index/girl1.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 17.15rem;">
+                                <h4>{{ $category->getTranslation('name') }}</h4>
+                                <p>Our latest armchair collections have been crafted by some of the best interior.</p>
+
+                                <div class="mt-3">
+                                    <a href="{{ route('products.category', $category->slug) }}" class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-1"></div>
-
-            <div class="col py-2" style="background: url('index/boy.jpg'); background-size: cover; background-position: 0 -28px; background-repeat: no-repeat;">
-                <div class="p-3" style="border: 1px solid white; height: 17rem;">
-                    <div class="p-3 text-center my-auto" style="background-color: white; height: 15rem; opacity: 0.8">
-                        <p class="mt-4" style="font-size: 1.2rem;">New Offers 2021</p>
-
-                        <h4 class="mt-4 mb-1">Sale 20% Off</h4>
-                        <h4>All products in Store</h4>
+                    <div class="col-1"></div>
+                @endforeach
+            @endif
+        </div>
+    </div>
 
 
-                        <p class="mt-4" style="font-size: 0.9rem;">Good Price for everyone</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col p-0">
-                <div class="row p-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-12" style="border: 1px solid white;">
-                        <div class="row align-items-center py-3">
-                            <div class="col-5">
-                                <h5 class="display-5" style="font-size: 1.6rem;">Men's Watch Collection 2021</h5>
-                            </div>
-                            <div class="col-7 text-center">
-                                <img src="{{ url('index/watch.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 15rem;">
+    <div class="container mt-5">
+        <div class="row">
+            @if (get_setting('home_banner1_images') != null)
+                @php $banner_1_imags = json_decode(get_setting('home_banner1_images')); @endphp
+                @foreach ($banner_1_imags as $key => $value)
+                    <div class="col p-0">
+                        <div class="row p-3 align-items-center" style="background-color: #F1F0F5;">
+                            <div class="col-12" style="border: 1px solid white;">
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <h5 class="display-5" style="font-size: 1.6rem;">Women's Dresses Collection 2021</h5>
+                                    </div>
+                                    <div class="col-7">
+                                        <img src="{{ uploaded_asset($banner_1_imags[$key]) }}" alt="" class="img-fluid" style="object-fit:cover; height: 17.15rem;">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="col-1"></div>
+                @endforeach
+            @endif
         </div>
     </div>
 
@@ -180,127 +101,164 @@
 
         <div class="swiper mySwiper2 mt-5">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="card text-left">
-                        <img src="{{ url('index/shirt1.png') }}" class="card-img-top" alt="..." style="height: 15rem">
-
-                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
-                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <p>Graphic Corner</p>
+                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
+                    <div class="product-thumb">
+                        <div class="product-inner">
+                            <div class="product-image">
+                                <div class="label-product label-new">New</div>
+                                <a href="single-product.html">
+                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
+                                </a>
+                                <div class="action-links">
+                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
                                 </div>
-                                <div>
+                            </div> <!-- end of product-image -->
 
+                            <div class="product-caption">
+                                <div class="product-meta d-flex justify-content-between align-items-center">
+                                    <div class="product-manufacturer">
+                                        <a href="#">Studio Design</a>
+                                    </div>
+                                    <div class="product-ratings">
+                                        <div class="rating-box">
+                                            <ul class="rating d-flex">
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
-                            <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
-                        </div>
-                    </div>
-                </div>
+                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
+                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
+                            </div><!-- end of product-caption -->
+                        </div><!-- end of product-inner -->
+                    </div><!-- end of product-thumb -->
+                </article>
+                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
+                    <div class="product-thumb">
+                        <div class="product-inner">
+                            <div class="product-image">
+                                <div class="label-product label-new">New</div>
+                                <a href="single-product.html">
+                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
+                                </a>
+                                <div class="action-links">
+                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                            </div> <!-- end of product-image -->
 
-                <div class="swiper-slide">
-                    <div class="card text-left">
-                        <img src="{{ url('index/shirt2.png') }}" class="card-img-top" alt="..." style="height: 15rem">
-                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
-                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <p>Graphic Corner</p>
+                            <div class="product-caption">
+                                <div class="product-meta d-flex justify-content-between align-items-center">
+                                    <div class="product-manufacturer">
+                                        <a href="#">Studio Design</a>
+                                    </div>
+                                    <div class="product-ratings">
+                                        <div class="rating-box">
+                                            <ul class="rating d-flex">
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
+                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
+                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
+                            </div><!-- end of product-caption -->
+                        </div><!-- end of product-inner -->
+                    </div><!-- end of product-thumb -->
+                </article>
+                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
+                    <div class="product-thumb">
+                        <div class="product-inner">
+                            <div class="product-image">
+                                <div class="label-product label-new">New</div>
+                                <a href="single-product.html">
+                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
+                                </a>
+                                <div class="action-links">
+                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                            </div> <!-- end of product-image -->
 
+                            <div class="product-caption">
+                                <div class="product-meta d-flex justify-content-between align-items-center">
+                                    <div class="product-manufacturer">
+                                        <a href="#">Studio Design</a>
+                                    </div>
+                                    <div class="product-ratings">
+                                        <div class="rating-box">
+                                            <ul class="rating d-flex">
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
-                            <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
-                        </div>
-                    </div>
-                </div>
+                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
+                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
+                            </div><!-- end of product-caption -->
+                        </div><!-- end of product-inner -->
+                    </div><!-- end of product-thumb -->
+                </article>
+                <article class="swiper-slide product-layout swiper-slide-visible swiper-slide-next" style="width: 285px;">
+                    <div class="product-thumb">
+                        <div class="product-inner">
+                            <div class="product-image">
+                                <div class="label-product label-new">New</div>
+                                <a href="single-product.html">
+                                    <img src="https://template.hasthemes.com/pebona/pebona/assets/images/products/new/product-8.jpg" alt="Wayfarer Messenger Bag" title="Wayfarer Messenger Bag">
+                                </a>
+                                <div class="action-links">
+                                    <a class="" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                            </div> <!-- end of product-image -->
 
-                <div class="swiper-slide">
-                    <div class="card text-left">
-                        <img src="{{ url('index/shirt3.png') }}" class="card-img-top" alt="..." style="height: 15rem">
-                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
-                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <p>Graphic Corner</p>
+                            <div class="product-caption">
+                                <div class="product-meta d-flex justify-content-between align-items-center">
+                                    <div class="product-manufacturer">
+                                        <a href="#">Studio Design</a>
+                                    </div>
+                                    <div class="product-ratings">
+                                        <div class="rating-box">
+                                            <ul class="rating d-flex">
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                                <li><i class="ion ion-md-star-outline"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
+                                <h6 class="card-text font-weight-bold mt-2" style="text-align: left">Men's Shirt New Design</h6>
+                                <h5 class="font-weight-bold mt-2" style="color: #FF0000;text-align: left">Rs. 1950.00</h5>
+                            </div><!-- end of product-caption -->
+                        </div><!-- end of product-inner -->
+                    </div><!-- end of product-thumb -->
+                </article>
 
-                                </div>
-                            </div>
-                            <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
-                            <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="swiper-slide">
-                    <div class="card text-left">
-                        <img src="{{ url('index/shirt4.png') }}" class="card-img-top" alt="..." style="height: 15rem">
-                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
-                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <p>Graphic Corner</p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                            <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
-                            <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="card text-left">
-                        <img src="{{ url('index/shirt1.png') }}" class="card-img-top" alt="..." style="height: 15rem">
-                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
-                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
-                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
-                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
-                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <p>Graphic Corner</p>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                            <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
-                            <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
             <div class="swiper-button-next"></div>
