@@ -46,7 +46,7 @@
             <div class="col-4 text-right">
                 <button class="btn border-0 position-relative" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-shopping-cart" style="font-size: 1.6rem; background-color: #FEF1EF; border-radius: 50px; padding: 20px; color: #FA290B"></i>
-                    <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.3rem 0.5rem!important; right: 6px; top:0px; color: white;">01</span>
+                    <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.1rem 0.2rem!important; right: 18px; top:4px; color: white;">01</span>
                 </button>
                     <div class="dropdown-menu open" aria-labelledby="dropdownMenuButton1">
                         <div class="shopping-cart-content">
@@ -59,7 +59,7 @@
                                         </a>
                                     </div>
                                     <div class="shopping-cart-title flex-grow-1">
-                                        <h4><a href="#">Rival Field Messenger</a></h4>
+                                        <p><a href="#">Rival Field Messenger</a></p>
                                         <p class="cart-price">$120.00</p>
                                         <div class="product-attr">
                                             <span>Size: S</span>
@@ -78,7 +78,7 @@
                                         </a>
                                     </div>
                                     <div class="shopping-cart-title flex-grow-1">
-                                        <h4><a href="#">Fusion Backpack</a></h4>
+                                        <p><a href="#">Fusion Backpack</a></p>
                                         <p class="cart-price">$200.00</p>
                                         <div class="product-attr">
                                             <span>Color: White</span>
