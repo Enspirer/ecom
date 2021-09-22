@@ -1,122 +1,56 @@
 @extends('frontend.layouts.app')
 
+@push('after-styles')
+    <link rel="stylesheet" href="{{ url('assets/css/login.css') }}">
+@endpush
+
 @section('content')
-    <section class="gry-bg py-5">
-        <div class="profile">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 mx-auto">
-                        <div class="card">
-                            <div class="text-center pt-4">
-                                <h1 class="h4 fw-600">
-                                    {{ translate('Login to your account.')}}
-                                </h1>
+    <div class="container" style="margin-top: 5rem; margin-bottom: 6rem;">
+            <h2 class="text-center">Login to your account.</h2>
+
+            <div class="row justify-content-center" style="margin-top: 3rem;">
+                <div class="col-6 shadow-lg p-5">
+                    <div class="row justify-content-center align-items-center mb-5 rounded-0">
+                        <div class="col-3">
+                            <p class="mb-0" style="font-size: 1rem;">Email Address</p>
+                        </div>
+                        <div class="col-9">
+                            <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3">
+                            <p class="mb-0" style="font-size: 1rem;">Password</p>
+                        </div>
+                        <div class="col-9">
+                            
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control rounded-0 pass" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-eye-slash" type="button"></i></span>
                             </div>
 
-                            <div class="px-4 py-3 py-lg-4">
-                                <div class="">
-                                    <form class="form-default" role="form" action="{{ route('login') }}" method="POST">
-                                        @csrf
-                                        <div class="form-group">
-                                            @if (\App\Addon::where('unique_identifier', 'otp_system')->first() != null && \App\Addon::where('unique_identifier', 'otp_system')->first()->activated)
-                                                <input type="text" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ translate('Email Or Phone')}}" name="email" id="email">
-                                            @else
-                                                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('Email') }}" name="email">
-                                            @endif
-                                            @if (\App\Addon::where('unique_identifier', 'otp_system')->first() != null && \App\Addon::where('unique_identifier', 'otp_system')->first()->activated)
-                                                <span class="opacity-60">{{  translate('Use country code before number') }}</span>
-                                            @endif
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ translate('Password')}}" name="password" id="password">
-                                        </div>
-
-                                        <div class="row mb-2">
-                                            <div class="col-6">
-                                                <label class="aiz-checkbox">
-                                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                    <span class=opacity-60>{{  translate('Remember Me') }}</span>
-                                                    <span class="aiz-square-check"></span>
-                                                </label>
-                                            </div>
-                                            <div class="col-6 text-right">
-                                                <a href="{{ route('password.request') }}" class="text-reset opacity-60 fs-14">{{ translate('Forgot password?')}}</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-5">
-                                            <button type="submit" class="btn btn-primary btn-block fw-600">{{  translate('Login') }}</button>
-                                        </div>
-                                    </form>
-
-                                    @if (env("DEMO_MODE") == "On")
-                                        <div class="mb-5">
-                                            <table class="table table-bordered mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>{{ translate('Seller Account')}}</td>
-                                                        <td>
-                                                            <button class="btn btn-info btn-sm" onclick="autoFillSeller()">{{ translate('Copy credentials') }}</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ translate('Customer Account')}}</td>
-                                                        <td>
-                                                            <button class="btn btn-info btn-sm" onclick="autoFillCustomer()">{{ translate('Copy credentials') }}</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ translate('Delivery Boy Account')}}</td>
-                                                        <td>
-                                                            <button class="btn btn-info btn-sm" onclick="autoFillDeliveryBoy()">{{ translate('Copy credentials') }}</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    @endif
-
-                                    @if(get_setting('google_login') == 1 || get_setting('facebook_login') == 1 || get_setting('twitter_login') == 1)
-                                        <div class="separator mb-3">
-                                            <span class="bg-white px-3 opacity-60">{{ translate('Or Login With')}}</span>
-                                        </div>
-                                        <ul class="list-inline social colored text-center mb-5">
-                                            @if (get_setting('facebook_login') == 1)
-                                                <li class="list-inline-item">
-                                                    <a href="{{ route('social.login', ['provider' => 'facebook']) }}" class="facebook">
-                                                        <i class="lab la-facebook-f"></i>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                            @if(get_setting('google_login') == 1)
-                                                <li class="list-inline-item">
-                                                    <a href="{{ route('social.login', ['provider' => 'google']) }}" class="google">
-                                                        <i class="lab la-google"></i>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                            @if (get_setting('twitter_login') == 1)
-                                                <li class="list-inline-item">
-                                                    <a href="{{ route('social.login', ['provider' => 'twitter']) }}" class="twitter">
-                                                        <i class="lab la-twitter"></i>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                        </ul>
-                                    @endif
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-muted mb-0">{{ translate('Dont have an account?')}}</p>
-                                    <a href="{{ route('user.registration') }}">{{ translate('Register Now')}}</a>
-                                </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Remember Me
+                                </label>
                             </div>
                         </div>
                     </div>
+
+                    <div class="text-center mt-4 mb-5">
+                        <a href="#" class="font-size: 1rem;">Forgot your Password?</a>
+                        <br>
+                        <a href="#" class="btn text-white px-5 mt-4" style="background-color: black;">Login</a>
+                    </div>
+
+                    <hr>
+
+                    <p class="text-center" style="font-size: 0.8rem;">No account? <a href="#" style="color: red;">Create one here.</a></p>
                 </div>
             </div>
         </div>
-    </section>
 @endsection
 
 @section('script')

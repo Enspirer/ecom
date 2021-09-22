@@ -435,8 +435,8 @@
                     </div>
 
 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-sari" role="tabpanel" aria-labelledby="pills-sari-tab">b</div>

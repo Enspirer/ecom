@@ -1,0 +1,35 @@
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 0!important;
+}
+
+.single-product .nav-link.active {
+    color: #FF0000!important;
+}
+
+.gold {
+    color: #FACA51;
+}
+
+.reviews {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 30em;
+}
+.reviews::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+.reviews::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+.reviews::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+.reviews::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
