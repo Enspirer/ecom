@@ -87,6 +87,7 @@ Route::get('/search', 'HomeController@search')->name('search');
 Route::get('/search?q={search}', 'HomeController@search')->name('suggestion.search');
 Route::post('/ajax-search', 'HomeController@ajax_search')->name('search.ajax');
 
+Route::get('/product/single', 'HomeController@singleProduct')->name('single_product');
 Route::get('/product/{slug}', 'HomeController@product')->name('product');
 Route::get('/category/{category_slug}', 'HomeController@listingByCategory')->name('products.category');
 Route::get('/brand/{brand_slug}', 'HomeController@listingByBrand')->name('products.brand');

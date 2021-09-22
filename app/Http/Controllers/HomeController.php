@@ -289,6 +289,10 @@ class HomeController extends Controller
         abort(404);
     }
 
+    public function singleProduct() {
+        return view('frontend.product_details');
+    }
+
     public function shop($slug)
     {
         $shop  = Shop::where('slug', $slug)->first();

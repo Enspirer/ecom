@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="container mt-2">
+    <div class="container mt-2 second">
         <div class="row align-items-center">
             <div class="col-4">
                 <input type="password" class="form-control border-0 px-0 w-50 d-inline" id="exampleInputPassword1" placeholder="Search for Products"><i class="fas fa-search text-secondary"></i>
@@ -132,7 +132,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item mx-2 dropdown">
+                    <li class="nav-item mx-2 dropdown position-relative">
                         <a class="nav-link active dropdown-toggle font-weight-bold" aria-current="page" href="#" id="homeDropdown" role="button" data-toggle="dropdown" aria-expanded="false">HOME</a>
                         
                         <ul class="dropdown-menu" aria-labelledby="homeDropdown">
@@ -142,7 +142,7 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item mx-2 dropdown">
+                    <li class="nav-item mx-2 dropdown position-relative">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="shopDropdown" role="button" data-toggle="dropdown" aria-expanded="false">SHOP</a>
                         
                         <ul class="dropdown-menu" aria-labelledby="shopDropdown">
@@ -152,7 +152,7 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item mx-2 dropdown">
+                    <li class="nav-item mx-2 dropdown position-relative">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="blogDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                         BLOG PAGES</a>
 
@@ -164,7 +164,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item mx-2 dropdown">
+                    <li class="nav-item mx-2 dropdown position-relative">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="utilityDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                         UTILITY PAGES</a>
 
@@ -188,4 +188,16 @@
         </div>
     </nav>
 </div>
+
+
+@push('after-scripts')
+  <script>
+      $('.dropdown').hover(function() {
+          $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
+      }, function() {
+          $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
+      }); 
+  </script>
+
+@endpush
 
