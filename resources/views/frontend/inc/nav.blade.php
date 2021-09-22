@@ -45,7 +45,7 @@
 
             <div class="col-4 text-right">
                 <button class="btn border-0 position-relative" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-shopping-cart" style="font-size: 1.6rem; background-color: #FEF1EF; border-radius: 50px; padding: 20px; color: #FA290B"></i>
+                    <i class="fas fa-shopping-cart" style="font-size: 1rem; background-color: #FEF1EF; border-radius: 50px; padding: 20px; color: #FA290B"></i>
                     <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.1rem 0.2rem!important; right: 18px; top:4px; color: white;">01</span>
                 </button>
                     <div class="dropdown-menu open" aria-labelledby="dropdownMenuButton1">
@@ -119,7 +119,7 @@
                     </div>
             
                 <button class="btn border-0 position-relative" type="button" id="dropdownMenuButton" data-toggle="" aria-expanded="false">
-                    <i class="fas fa-cog" style="font-size: 1.6rem; color: #434343;"></i>
+                    <i class="fas fa-cog" style="font-size: 1rem; color: #434343;"></i>
                 </button>
             </div>
         </div>
