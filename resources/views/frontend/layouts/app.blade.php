@@ -61,6 +61,8 @@
 
     <link rel="stylesheet" href="{{ static_asset('assets/css/imzframe.css') }}">
 
+    <link rel="stylesheet" href="{{ static_asset('assets/css/card.css') }}">
+
     <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     @stack('after-styles')
