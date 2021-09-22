@@ -69,13 +69,31 @@
             <div class="col p-0">
                 <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
                     <div class="col-5">
-                        <img src="{{ url('index/chair.png') }}" alt="" class="img-fluid">
+                        <img src="{{ url('index/chair.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
                     </div>
                     <div class="col-7">
                         <h4>Home <b>Decor</b></h4>
                         <p>Our latest armchair collections have been crafted by some of the best interior.</p>
 
-                        <div class="text-center mt-3">
+                        <div class="mt-3">
+                            <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1"></div>
+
+            <div class="col p-0">
+                <div class="row pt-3 align-items-center" style="background-color: #F1F0F5;">
+                    <div class="col-5">
+                        <img src="{{ url('index/girl.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
+                    </div>
+                    <div class="col-7">
+                        <h4>Home <b>Decor</b></h4>
+                        <p>Our latest armchair collections have been crafted by some of the best interior.</p>
+
+                        <div class="my-3">
                             <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
                         </div>
                     </div>
@@ -87,25 +105,7 @@
             <div class="col p-0">
                 <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
                     <div class="col-5">
-                        <img src="{{ url('index/girl.png') }}" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-7">
-                        <h4>Home <b>Decor</b></h4>
-                        <p>Our latest armchair collections have been crafted by some of the best interior.</p>
-
-                        <div class="text-center mt-3">
-                            <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col p-0">
-                <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-5">
-                        <img src="{{ url('index/grocery.png') }}" alt="" class="img-fluid">
+                        <img src="{{ url('index/grocery.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 11rem;">
                     </div>
                     <div class="col-7">
                         <h4>Home <b>Decor</b></h4>
@@ -124,29 +124,15 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col p-0">
-                <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-3 p-0 text-center">
-                        <h5 class="font-weight-bold">Women's Dresses Collection 2021</h5>
-                    </div>
-                    <div class="col-9 p-0">
-                        <img src="{{ url('index/girl1.png') }}" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div> p-0
-
-            <div class="col p-0">
-                <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-5">
-                        <img src="{{ url('index/girl.png') }}" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-7">
-                        <h4>Home <b>Decor</b></h4>
-                        <p>Our latest armchair collections have been crafted by some of the best interior.</p>
-
-                        <div class="text-center mt-3">
-                            <button class="btn text-white rounded-0" style="background-color: #000000;">SHOP NOW</button>
+                <div class="row p-3 align-items-center" style="background-color: #F1F0F5;">
+                    <div class="col-12" style="border: 1px solid white;">
+                        <div class="row align-items-center">
+                            <div class="col-5">
+                                <h5 class="display-5" style="font-size: 1.6rem;">Women's Dresses Collection 2021</h5>
+                            </div>
+                            <div class="col-7">
+                                <img src="{{ url('index/girl1.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 17.15rem;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,13 +140,33 @@
 
             <div class="col-1"></div>
 
-            <div class="col p-0">
-                <div class="row py-3 align-items-center" style="background-color: #F1F0F5;">
-                    <div class="col-3 p-0 text-center">
-                        <h5 class="font-weight-bold">Men's Watch Collection 2021</h5>
+            <div class="col py-2" style="background: url('index/boy.jpg'); background-size: cover; background-position: 0 -28px; background-repeat: no-repeat;">
+                <div class="p-3" style="border: 1px solid white; height: 17rem;">
+                    <div class="p-3 text-center my-auto" style="background-color: white; height: 15rem; opacity: 0.8">
+                        <p class="mt-4" style="font-size: 1.2rem;">New Offers 2021</p>
+
+                        <h4 class="mt-4 mb-1">Sale 20% Off</h4>
+                        <h4>All products in Store</h4>
+
+
+                        <p class="mt-4" style="font-size: 0.9rem;">Good Price for everyone</p>
                     </div>
-                    <div class="col-9 p-0 text-center">
-                        <img src="{{ url('index/watch.png') }}" alt="" class="img-fluid" style="height: 16rem;">
+                </div>
+            </div>
+
+            <div class="col-1"></div>
+
+            <div class="col p-0">
+                <div class="row p-3 align-items-center" style="background-color: #F1F0F5;">
+                    <div class="col-12" style="border: 1px solid white;">
+                        <div class="row align-items-center py-3">
+                            <div class="col-5">
+                                <h5 class="display-5" style="font-size: 1.6rem;">Men's Watch Collection 2021</h5>
+                            </div>
+                            <div class="col-7 text-center">
+                                <img src="{{ url('index/watch.png') }}" alt="" class="img-fluid" style="object-fit:cover; height: 15rem;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -169,14 +175,21 @@
 
 
     <div class="container text-center" style="margin-top: 7rem;">
-        <h4>New Trending Products</h4>
-        <p>Description area and you can type any thing you want to display your customer</p>
+        <h3>New Trending Products</h3>
+        <p class="mt-3">Description area and you can type any thing you want to display your customer</p>
 
         <div class="swiper mySwiper2 mt-5">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="card text-left shadow-lg">
+                    <div class="card text-left">
                         <img src="{{ url('index/shirt1.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+
+                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
@@ -193,8 +206,14 @@
                 </div>
 
                 <div class="swiper-slide">
-                    <div class="card text-left shadow-lg">
+                    <div class="card text-left">
                         <img src="{{ url('index/shirt2.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
@@ -211,8 +230,14 @@
                 </div>
 
                 <div class="swiper-slide">
-                    <div class="card text-left shadow-lg">
+                    <div class="card text-left">
                         <img src="{{ url('index/shirt3.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
@@ -229,8 +254,14 @@
                 </div>
 
                 <div class="swiper-slide">
-                    <div class="card text-left shadow-lg">
+                    <div class="card text-left">
                         <img src="{{ url('index/shirt4.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
@@ -247,8 +278,14 @@
                 </div>
 
                 <div class="swiper-slide">
-                    <div class="card text-left shadow-lg">
-                        <img src="{{ url('index/shirt5.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                    <div class="card text-left">
+                        <img src="{{ url('index/shirt1.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                        <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                            <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                            <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                            <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                            <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
@@ -294,6 +331,161 @@
     <div class="container text-center" style="margin-top: 7rem;">
         <h4>Our Categories</h4>
         <p>Description area and you can type any thing you want to display your customer</p>
+
+
+        <ul class="nav nav-pills m-3 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link border-0 bg-white active font-weight-bold" id="pills-shop-tab" data-toggle="pill" data-target="#pills-shop" type="button" role="tab" aria-controls="pills-shop" aria-selected="true">SHOP NEW</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link border-0 bg-white font-weight-bold" id="pills-sari-tab" data-toggle="pill" data-target="#pills-sari" type="button" role="tab" aria-controls="pills-sari" aria-selected="false">SARI</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link border-0 bg-white font-weight-bold" id="pills-casual-tab" data-toggle="pill" data-target="#pills-casual" type="button" role="tab" aria-controls="pills-casual" aria-selected="false">CASUAL</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link border-0 bg-white font-weight-bold" id="pills-sunglasses-tab" data-toggle="pill" data-target="#pills-sunglasses" type="button" role="tab" aria-controls="pills-sunglasses" aria-selected="false">SUNGLASSES</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link border-0 bg-white font-weight-bold" id="pills-backpack-tab" data-toggle="pill" data-target="#pills-backpack" type="button" role="tab" aria-controls="pills-backpack" aria-selected="false">BACKPACK</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-shop" role="tabpanel" aria-labelledby="pills-shop-tab">
+                <div class="swiper mySwiper2 mt-5">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card text-left">
+                                <img src="{{ url('index/7.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+
+                                <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                                    <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p>Graphic Corner</p>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
+                                    <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card text-left">
+                                <img src="{{ url('index/9.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                                <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                                    <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p>Graphic Corner</p>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
+                                    <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card text-left">
+                                <img src="{{ url('index/10.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                                <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                                    <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p>Graphic Corner</p>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
+                                    <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card text-left">
+                                <img src="{{ url('index/7.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                                <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                                    <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p>Graphic Corner</p>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
+                                    <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card text-left">
+                                <img src="{{ url('index/10.png') }}" class="card-img-top" alt="..." style="height: 15rem">
+                                <div class="action-links" style="position: absolute; top: 13rem; background-color: white;">
+                                    <a class="action-btn btn-cart" href="#" title="Add to Cart"><i class="fas fa-shopping-bag"></i></a>
+                                    <a class="action-btn btn-wishlist" href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                    <a class="action-btn btn-compare" href="#" title="Add to Compare"><i class="fas fa-sync"></i></a>
+                                    <a class="action-btn btn-quickview" data-bs-toggle="modal" data-bs-target="#product_quick_view" href="#" title="Quick View"><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p>Graphic Corner</p>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <h6 class="card-text font-weight-bold mt-2">Men's Shirt New Design</h6>
+                                    <h5 class="font-weight-bold mt-2" style="color: #FF0000">Rs. 1950.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-sari" role="tabpanel" aria-labelledby="pills-sari-tab">b</div>
+            <div class="tab-pane fade" id="pills-casual" role="tabpanel" aria-labelledby="pills-casual-tab">c</div>
+            <div class="tab-pane fade" id="pills-sunglasses" role="tabpanel" aria-labelledby="pills-sunglasses-tab">...</div>
+            <div class="tab-pane fade" id="pills-backpack" role="tabpanel" aria-labelledby="pills-backpack-tab">...</div>
+        </div>
     </div>
 
 @endsection
@@ -311,9 +503,9 @@
       var swiper = new Swiper(".mySwiper2", {
         slidesPerView: 4,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
     </script>
