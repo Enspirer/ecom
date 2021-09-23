@@ -293,6 +293,15 @@ class HomeController extends Controller
         return view('frontend.product_details');
     }
 
+    public function forgotPassword() {
+        return view('frontend.user_forgot_password');
+    }
+
+    public function Products() {
+        return view('frontend.products');
+    }
+
+
     public function shop($slug)
     {
         $shop  = Shop::where('slug', $slug)->first();

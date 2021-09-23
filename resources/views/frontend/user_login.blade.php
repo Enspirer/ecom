@@ -6,44 +6,52 @@
 
 @section('content')
     <div class="container" style="margin-top: 5rem; margin-bottom: 6rem;">
-            <h2 class="text-center">Login to your account.</h2>
+            <h2 class="text-center">{{ translate('Login to your account.')}}</h2>
 
             <div class="row justify-content-center" style="margin-top: 3rem;">
                 <div class="col-6 shadow-lg p-5">
-                    <div class="row justify-content-center align-items-center mb-5 rounded-0">
-                        <div class="col-3">
-                            <p class="mb-0" style="font-size: 1rem;">Email Address</p>
+                    <form class="form-default" role="form" action="{{ route('login') }}" method="POST">
+                    {{@csrf_field()}}
+                        <div class="row justify-content-center align-items-center mb-5 rounded-0">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 0.9rem;">Email Address</p>
+                            </div>
+                            <div class="col-9">
+                                <input type="email" class="form-control rounded-0" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
                         </div>
-                        <div class="col-9">
-                            <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                    </div>
 
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-3">
-                            <p class="mb-0" style="font-size: 1rem;">Password</p>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 1rem;">Password</p>
+                            </div>
+                            <div class="col-9">
+                                
+                                <div class="input-group">
+                                    <input type="password" class="form-control rounded-0 pass" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-eye-slash" type="button"></i></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-9">
+
+                        <div class="row justify-content-end mt-3">
+                            <div class="col-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4 mb-5">
                             
-                            <div class="input-group mb-3">
-                                <input type="password" class="form-control rounded-0 pass" id="exampleInputEmail1" aria-describedby="emailHelp">  
-                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-eye-slash" type="button"></i></span>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Remember Me
-                                </label>
-                            </div>
+                            <a href="#" class="font-size: 1rem;">Forgot your Password?</a>
+                            <br>
+                            <button type="submit" class="btn text-white px-5 mt-4" style="background-color: black;">{{  translate('Login') }}</button>
                         </div>
-                    </div>
-
-                    <div class="text-center mt-4 mb-5">
-                        <a href="#" class="font-size: 1rem;">Forgot your Password?</a>
-                        <br>
-                        <a href="#" class="btn text-white px-5 mt-4" style="background-color: black;">Login</a>
-                    </div>
+                    </form>
 
                     <hr>
 

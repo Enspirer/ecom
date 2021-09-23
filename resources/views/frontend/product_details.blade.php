@@ -10,15 +10,21 @@
         <div class="row align-items-center mb-5 image">
             <div class="col-1 pr-0">
                 <dic class="row">
-                    <div class="col-12 mb-2">
-                        <img src="{{ url('index/9.png') }}" alt="" class="img-fluid" style="height: 5rem;">
-                    </div>
-                    <div class="col-12 mb-2">
-                        <img src="{{ url('index/10.png') }}" alt="" class="img-fluid" style="height: 5rem;">
-                    </div>
-                    <div class="col-12 mb-2">
-                        <img src="{{ url('index/9.png') }}" alt="" class="img-fluid" style="height: 5rem;">
-                    </div>
+                @php
+                    $photos = explode(',', $detailedProduct->photos);
+                @endphp
+
+                    @foreach ($photos as $key => $photo)
+                        <div class="col-12 mb-2">
+                            <img src="{{ uploaded_asset($photo) }}" alt="" class="img-fluid" style="height: 5rem;">
+                        </div>
+                        <!-- <div class="col-12 mb-2">
+                            <img src="{{ url('index/10.png') }}" alt="" class="img-fluid" style="height: 5rem;">
+                        </div>
+                        <div class="col-12 mb-2">
+                            <img src="{{ url('index/9.png') }}" alt="" class="img-fluid" style="height: 5rem;">
+                        </div> -->
+                    @endforeach
                 </dic>
             </div>
 

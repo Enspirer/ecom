@@ -1,210 +1,103 @@
 @extends('frontend.layouts.app')
 
+@push('after-styles')
+    <link rel="stylesheet" href="{{ url('assets/css/login.css') }}">
+@endpush
+
 @section('content')
-    <section class="gry-bg py-4">
-        <div class="profile">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 mx-auto">
-                        <div class="card">
-                            <div class="text-center pt-4">
-                                <h1 class="h4 fw-600">
-                                    {{ translate('Create an account.')}}
-                                </h1>
+    <div class="container" style="margin-top: 5rem; margin-bottom: 6rem;">
+            <h2 class="text-center">{{ translate('Create an Account')}}</h2>
+
+            <div class="row justify-content-center" style="margin-top: 2rem;">
+                <div class="col-6 shadow-lg p-5">
+                    <p style="font-size: 0.8rem;">Already have an account? <a href="#" style="color: red;">Login instead!</a></p>
+                    <form class="form-default mt-4" role="form" action="{{ route('login') }}" method="POST">
+                    {{@csrf_field()}}
+
+                        <div class="row justify-content-center align-items-center mb-4 rounded-0">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 0.9rem;">Full Name</p>
                             </div>
-                            <div class="px-4 py-3 py-lg-4">
-                                <div class="">
-                                    <form id="reg-form" class="form-default" role="form" action="{{ route('register') }}" method="POST">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" placeholder="{{  translate('Full Name') }}" name="name">
-                                            @if ($errors->has('name'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('name') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control rounded-0" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your first and last name">
+                            </div>
+                        </div>
 
-                                        @if (\App\Addon::where('unique_identifier', 'otp_system')->first() != null && \App\Addon::where('unique_identifier', 'otp_system')->first()->activated)
-                                            <div class="form-group phone-form-group mb-1">
-                                                <input type="tel" id="phone-code" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" value="{{ old('phone') }}" placeholder="" name="phone" autocomplete="off">
-                                            </div>
+                        <div class="row justify-content-center align-items-center mb-4 rounded-0">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 0.9rem;">Email Address</p>
+                            </div>
+                            <div class="col-9">
+                                <input type="email" class="form-control rounded-0" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            </div>
+                        </div>
 
-                                            <input type="hidden" name="country_code" value="">
+                        <div class="row justify-content-center align-items-center mb-5 rounded-0">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 0.9rem;">Phone Number</p>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control rounded-0" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your phone number with country code">
+                            </div>
+                        </div>
 
-                                            <div class="form-group email-form-group mb-1 d-none">
-                                                <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('Email') }}" name="email"  autocomplete="off">
-                                                @if ($errors->has('email'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('email') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-
-                                            <div class="form-group text-right">
-                                                <button class="btn btn-link p-0 opacity-50 text-reset" type="button" onclick="toggleEmailPhone(this)">{{ translate('Use Email Instead') }}</button>
-                                            </div>
-                                        @else
-                                            <div class="form-group">
-                                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('Email') }}" name="email">
-                                                @if ($errors->has('email'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('email') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-                                        @endif
-
-                                        <div class="form-group">
-                                            <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{  translate('Password') }}" name="password">
-                                            @if ($errors->has('password'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('password') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="{{  translate('Confirm Password') }}" name="password_confirmation">
-                                        </div>
-
-                                        @if(get_setting('google_recaptcha') == 1)
-                                            <div class="form-group">
-                                                <div class="g-recaptcha" data-sitekey="{{ env('CAPTCHA_KEY') }}"></div>
-                                            </div>
-                                        @endif
-
-                                        <div class="mb-3">
-                                            <label class="aiz-checkbox">
-                                                <input type="checkbox" name="checkbox_example_1" required>
-                                                <span class=opacity-60>{{ translate('By signing up you agree to our terms and conditions.')}}</span>
-                                                <span class="aiz-square-check"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="mb-5">
-                                            <button type="submit" class="btn btn-primary btn-block fw-600">{{  translate('Create Account') }}</button>
-                                        </div>
-                                    </form>
-                                    @if(get_setting('google_login') == 1 || get_setting('facebook_login') == 1 || get_setting('twitter_login') == 1)
-                                        <div class="separator mb-3">
-                                            <span class="bg-white px-3 opacity-60">{{ translate('Or Join With')}}</span>
-                                        </div>
-                                        <ul class="list-inline social colored text-center mb-5">
-                                            @if (get_setting('facebook_login') == 1)
-                                                <li class="list-inline-item">
-                                                    <a href="{{ route('social.login', ['provider' => 'facebook']) }}" class="facebook">
-                                                        <i class="lab la-facebook-f"></i>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                            @if(get_setting('google_login') == 1)
-                                                <li class="list-inline-item">
-                                                    <a href="{{ route('social.login', ['provider' => 'google']) }}" class="google">
-                                                        <i class="lab la-google"></i>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                            @if (get_setting('twitter_login') == 1)
-                                                <li class="list-inline-item">
-                                                    <a href="{{ route('social.login', ['provider' => 'twitter']) }}" class="twitter">
-                                                        <i class="lab la-twitter"></i>
-                                                    </a>
-                                                </li>
-                                            @endif
-                                        </ul>
-                                    @endif
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-muted mb-0">{{ translate('Already have an account?')}}</p>
-                                    <a href="{{ route('user.login') }}">{{ translate('Log In')}}</a>
+                        <div class="row justify-content-center align-items-center mb-5">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 1rem;">Password</p>
+                            </div>
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <input type="password" class="form-control rounded-0 pass" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password">  
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-eye-slash" type="button"></i></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="row justify-content-center align-items-center mb-5">
+                            <div class="col-3">
+                                <p class="mb-0" style="font-size: 1rem;">Password</p>
+                            </div>
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <input type="password" class="form-control rounded-0 pass" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm Password">  
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-eye-slash" type="button"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-end mt-3">
+                            <div class="col-12 text-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1" style="font-size: 0.8rem;">
+                                        By signing up you agree to our terms and conditions.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4 mb-5">
+                            <button type="submit" class="btn text-white px-5 mt-4" style="background-color: black;">{{  translate('Register') }}</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
 @endsection
 
-
 @section('script')
-    @if(get_setting('google_recaptcha') == 1)
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    @endif
-
     <script type="text/javascript">
-
-        @if(get_setting('google_recaptcha') == 1)
-        // making the CAPTCHA  a required field for form submission
-        $(document).ready(function(){
-            // alert('helloman');
-            $("#reg-form").on("submit", function(evt)
-            {
-                var response = grecaptcha.getResponse();
-                if(response.length == 0)
-                {
-                //reCaptcha not verified
-                    alert("please verify you are humann!");
-                    evt.preventDefault();
-                    return false;
-                }
-                //captcha verified
-                //do the rest of your validations here
-                $("#reg-form").submit();
-            });
-        });
-        @endif
-
-        var isPhoneShown = true,
-            countryData = window.intlTelInputGlobals.getCountryData(),
-            input = document.querySelector("#phone-code");
-
-        for (var i = 0; i < countryData.length; i++) {
-            var country = countryData[i];
-            if(country.iso2 == 'bd'){
-                country.dialCode = '88';
-            }
+        function autoFillSeller(){
+            $('#email').val('seller@example.com');
+            $('#password').val('123456');
         }
-
-        var iti = intlTelInput(input, {
-            separateDialCode: true,
-            utilsScript: "{{ static_asset('assets/js/intlTelutils.js') }}?1590403638580",
-            onlyCountries: @php echo json_encode(\App\Country::where('status', 1)->pluck('code')->toArray()) @endphp,
-            customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
-                if(selectedCountryData.iso2 == 'bd'){
-                    return "01xxxxxxxxx";
-                }
-                return selectedCountryPlaceholder;
-            }
-        });
-
-        var country = iti.getSelectedCountryData();
-        $('input[name=country_code]').val(country.dialCode);
-
-        input.addEventListener("countrychange", function(e) {
-            // var currentMask = e.currentTarget.placeholder;
-
-            var country = iti.getSelectedCountryData();
-            $('input[name=country_code]').val(country.dialCode);
-
-        });
-
-        function toggleEmailPhone(el){
-            if(isPhoneShown){
-                $('.phone-form-group').addClass('d-none');
-                $('.email-form-group').removeClass('d-none');
-                isPhoneShown = false;
-                $(el).html('{{ translate('Use Phone Instead') }}');
-            }
-            else{
-                $('.phone-form-group').removeClass('d-none');
-                $('.email-form-group').addClass('d-none');
-                isPhoneShown = true;
-                $(el).html('{{ translate('Use Email Instead') }}');
-            }
+        function autoFillCustomer(){
+            $('#email').val('customer@example.com');
+            $('#password').val('123456');
+        }
+        function autoFillDeliveryBoy(){
+            $('#email').val('deliveryboy@example.com');
+            $('#password').val('123456');
         }
     </script>
 @endsection

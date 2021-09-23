@@ -1,0 +1,98 @@
+#accordion p {
+    position:absolute;
+    top:5px;
+    right:20px;
+    font-size:20px;
+    color:black;
+    -webkit-animation: minus 0.5s;
+}
+
+@keyframes minus {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+[aria-expanded="false"] > .expanded, [aria-expanded="true"] > .collapsed {display: none;}
+
+input:checked + label {
+    color: red;
+}
+
+
+
+.items .col-4:hover .card {
+    -webkit-box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.75);
+}
+
+.items .col-4:hover .action-links {
+    z-index: 3;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.action-links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+    z-index: 3;
+    opacity: 1;
+    height: 50px;
+    line-height: 26px;
+    padding: 12px 0;
+    width: 200px;
+    margin: 0 auto;
+    -webkit-box-shadow: 1px 1px 0 0 #e8e8e8;
+    box-shadow: 1px 1px 0 0 #e8e8e8;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    -webkit-transform: perspective(600px) rotateX(
+90deg);
+    transform: perspective(600px) rotateX(
+90deg);
+}
+
+
+.gold {
+    color: #FACA51;
+}
+
+.card .card-body {
+    padding: 10px 15px!important;
+}
+
+.card {
+    border: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    margin-bottom: 0px!important;
+}
+
+.card .card-header {
+    border-bottom: none!important;
+    padding: 0!important;
+}

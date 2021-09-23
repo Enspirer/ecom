@@ -53,6 +53,10 @@ Route::get('/social-login/redirect/{provider}', 'Auth\LoginController@redirectTo
 Route::get('/social-login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
 Route::get('/users/login', 'HomeController@login')->name('user.login');
 Route::get('/users/registration', 'HomeController@registration')->name('user.registration');
+
+//forgot password blade
+Route::get('/users/forgot-password', 'HomeController@forgotPassword')->name('user.forgot_password');
+
 //Route::post('/users/login', 'HomeController@user_login')->name('user.login.submit');
 Route::post('/users/login/cart', 'HomeController@cart_login')->name('cart.login.submit');
 
@@ -87,7 +91,12 @@ Route::get('/search', 'HomeController@search')->name('search');
 Route::get('/search?q={search}', 'HomeController@search')->name('suggestion.search');
 Route::post('/ajax-search', 'HomeController@ajax_search')->name('search.ajax');
 
+//single product
 Route::get('/product/single', 'HomeController@singleProduct')->name('single_product');
+//all products
+Route::get('/products', 'HomeController@Products')->name('products');
+
+
 Route::get('/product/{slug}', 'HomeController@product')->name('product');
 Route::get('/category/{category_slug}', 'HomeController@listingByCategory')->name('products.category');
 Route::get('/brand/{brand_slug}', 'HomeController@listingByBrand')->name('products.brand');

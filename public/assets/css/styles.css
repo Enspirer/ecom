@@ -10,16 +10,30 @@ nav .nav-link.active {
     color: #FF0000!important;
 }
 
-.second .dropdown-menu {
+.cart-dropdown .dropdown-menu {
     position: absolute;
     transform: translate3d(149px, 84px, 0px);
     top: -10px!important;
-    left: -50px!important;
+    left: -147px!important;
     will-change: transform;
-    width: 24rem!important;
+    min-width: 24rem!important;
 }
 
-nav .dropdown-menu {
+.profile-dropdown .dropdown-menu {
+    position: absolute;
+    transform: translate3d(149px, 84px, 0px);
+    top: 0px!important;
+    left: -50px!important;
+    will-change: transform;
+    min-width: 10rem!important;
+    text-align: center;
+}
+
+.profile-dropdown .dropdown-menu a {
+    color: black!important;
+}
+
+/* nav .dropdown-menu {
     position: absolute;
     transform: translate3d(149px, 84px, 0px);
     top: -41px!important;
@@ -27,8 +41,19 @@ nav .dropdown-menu {
     will-change: transform;
     width: 24rem!important;
     border: 0;
-}
+} */
 
+
+.dropdown {
+    position: static!important;
+}
+.dropdown .dropdown-menu {
+    position: absolute!important;
+    width: 100%!important;
+    left: 0rem!important;
+    padding: 1.2rem!important;
+    top: 6rem!important;
+}
 .cart-btn {
     background-color: #252525;
     color: white;
@@ -48,3 +73,207 @@ nav .dropdown-menu {
 .aiz-main-wrapper {
     background-color: white!important;
 }
+
+
+
+
+/*! CSS Used from: https://template.hasthemes.com/pebona/pebona/assets/css/bootstrap.min.css */
+*,::after,::before{box-sizing:border-box;}
+h3{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+h3{font-size:calc(1.3rem + .6vw);}
+@media (min-width:1200px){
+h3{font-size:1.75rem;}
+}
+ul{padding-left:2rem;}
+ul{margin-top:0;margin-bottom:1rem;}
+ul ul{margin-bottom:0;}
+a{color:#0d6efd;text-decoration:underline;}
+a:hover{color:#0a58ca;}
+img{vertical-align:middle;}
+::-moz-focus-inner{padding:0;border-style:none;}
+.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto;}
+@media (min-width:576px){
+.container{max-width:540px;}
+}
+@media (min-width:768px){
+.container{max-width:720px;}
+}
+@media (min-width:992px){
+.container{max-width:960px;}
+}
+@media (min-width:1200px){
+.container{max-width:1140px;}
+}
+@media (min-width:1400px){
+.container{max-width:1320px;}
+}
+/*! CSS Used from: https://template.hasthemes.com/pebona/pebona/assets/css/font-awesome.min.css */
+.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.fa-plus:before{content:"\f067";}
+.fa-bars:before{content:"\f0c9";}
+/*! CSS Used from: https://template.hasthemes.com/pebona/pebona/assets/css/plugins.css */
+.stellarnav,.stellarnav li{position:relative;line-height:normal;}
+.stellarnav{width:100%;z-index:9900;}
+.stellarnav ul{margin:0;padding:0;text-align:center;}
+.stellarnav li{list-style:none;display:block;margin:0;padding:0;vertical-align:middle;}
+.stellarnav li a{padding:15px;display:block;text-decoration:none;color:#777;font-size:inherit;font-family:inherit;box-sizing:border-box;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;transition:all .3s ease-out;}
+.stellarnav>ul>li{display:inline-block;}
+.stellarnav>ul>li>a{padding:20px 40px;}
+.stellarnav ul ul{top:auto;width:220px;position:absolute;z-index:9900;text-align:left;display:none;background:#ddd;}
+.stellarnav li li{display:block;}
+.stellarnav ul ul ul{top:0;left:220px;}
+.stellarnav>ul>li:hover>ul>li:hover>ul{opacity:1;visibility:visible;top:0;}
+.stellarnav li.has-sub>a:after{content:'\f107';font-family:FontAwesome;margin-left:10px;}
+.stellarnav li li.has-sub>a:after{content:'\f105';font-family:FontAwesome;margin-left:10px;}
+.stellarnav .dd-toggle{display:none;position:absolute;top:0;right:0;padding:0;width:48px;height:48px;text-align:center;z-index:9999;border:0;}
+.stellarnav .dd-toggle i{position:absolute;margin:auto;top:33%;left:0;right:0;-webkit-transition:transform .3s ease-out;-moz-transition:transform .3s ease-out;transition:transform .3s ease-out;}
+.stellarnav .menu-toggle{display:none;text-transform:uppercase;text-decoration:none;color:#777;padding:15px;box-sizing:border-box;}
+.stellarnav .full{width:100%;}
+.stellarnav.desktop li.mega li{display:inline-block;vertical-align:top;margin-left:-4px;}
+.stellarnav.desktop li.mega li li{display:block;margin-left:0;}
+.stellarnav.desktop li.mega ul ul{width:auto;}
+.stellarnav.desktop>ul>li.mega{position:inherit;}
+.stellarnav.desktop>ul>li.mega>ul{width:100%;}
+.stellarnav.desktop>ul>li.mega>ul li.has-sub ul{display:block;position:relative;left:auto;}
+.stellarnav.desktop>ul>li.mega>ul>li{padding-bottom:15px;box-sizing:border-box;}
+.stellarnav.desktop li.mega li li a{padding:5px 15px;}
+.stellarnav.desktop li.mega li.has-sub a:after{display:none;}
+.stellarnav.desktop>ul>li.mega>ul>li>a{color:#ff0;}
+@media only screen and (max-width :768px){
+.stellarnav{overflow:hidden;display:block;}
+.stellarnav ul{position:relative;display:none;}
+}
+/*! CSS Used from: https://template.hasthemes.com/pebona/pebona/assets/css/style.css */
+.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
+@media (min-width: 576px){
+.container{max-width:540px;}
+}
+@media (min-width: 768px){
+.container{max-width:720px;}
+}
+@media (min-width: 992px){
+.container{max-width:960px;}
+}
+@media (min-width: 1200px){
+.container{max-width:1140px;}
+}
+@media (min-width: 1400px){
+.container{max-width:1140px;}
+}
+#main_nav>ul li.has-sub a span::after,#main_nav .mega a span::after,#main_nav .mega-container .mega-menu-title,.main-nav-area{position:relative;}
+h3{font-size:18px;}
+h3{font-family:"Rubik", sans-serif;font-weight:500;}
+.fa{font-size:14px;}
+ul{margin-bottom:10px;}
+img{max-width:100%;height:auto;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
+*:focus{outline:none;}
+a{text-decoration:none;}
+a:hover,a:focus{text-decoration:none;}
+a:focus,a:active,a:hover{outline:0 none;text-decoration:none;}
+::-webkit-input-placeholder{color:#292929;font-size:13px;}
+::-moz-placeholder{color:#292929;font-size:13px;}
+:-ms-input-placeholder{color:#292929;font-size:13px;}
+:-moz-placeholder{color:#292929;font-size:13px;}
+::-webkit-selection{background:#cc2121;text-shadow:none;color:#fff;}
+::-moz-selection{background:#cc2121;text-shadow:none;color:#fff;}
+::selection{background:#cc2121;text-shadow:none;color:#fff;}
+#main_nav .mega-container li{padding-bottom:0;}
+#main_nav .mega-container .mega-menu-title h3{margin-bottom:0;}
+h3{line-height:1;text-transform:uppercase;margin-top:0;margin-bottom:10px;}
+a,#main_nav .mega-container .fullwidth-banner img{-webkit-transition:all 0.7s cubic-bezier(0.2, 1, 0.22, 1);-o-transition:all 0.7s cubic-bezier(0.2, 1, 0.22, 1);transition:all 0.7s cubic-bezier(0.2, 1, 0.22, 1);}
+#main_nav .mega-container .fullwidth-banner a{overflow:hidden;}
+a:focus,a:active,a:hover,#main_nav>ul>li.active>a,#main_nav>ul>li:hover>a,#main_nav>ul>li.active .active>a:not(.mega-menu-title),#main_nav .mega-container .mega-menu-title:hover,#main_nav .mega-container a:hover,#main_nav .mega-container a:focus,#main_nav>ul>li>ul a:hover{color:#cc2121;}
+h3,a,#main_nav>ul>li.active .active>a:not(.mega-menu-title):hover,#main_nav .mega-container .mega-menu-title{color:#242424;}
+#main_nav .menu-toggle,#main_nav>ul>li a,#main_nav .mega-container,#main_nav>ul>li>ul,#main_nav .mega-container a,#main_nav>ul>li>ul a{color:#000;}
+.bgc-white,#main_nav .mega-container,#main_nav>ul>li>ul,#main_nav .mega-container ul{background-color:white;}
+#main_nav{border-top:1px solid #ebebeb;}
+#main_nav>ul>li a{padding:17px 20px;font-size:12px;font-weight:500;text-transform:uppercase;line-height:20px;}
+#main_nav>ul>li a::after{content:none;}
+#main_nav>ul>li ul li a{font-weight:400;}
+#main_nav>ul li.has-sub a span::after,#main_nav .mega a span::after{content:'\f107';font-family:FontAwesome;margin-left:5px;font-size:13px;left:5px;}
+#main_nav .mega-container,#main_nav>ul>li>ul{padding:45px 30px;border:1px solid #e4e4e4;}
+#main_nav .mega-container li{margin-left:0;margin-right:-4px;}
+#main_nav .mega-container .mega-menu-title{text-transform:capitalize;font-weight:500;display:block;letter-spacing:-.025em;padding-bottom:25px;}
+#main_nav .mega-container .mega-menu-title h3{font-size:14px;text-transform:capitalize;color:inherit;}
+#main_nav .mega-container .mega-menu-title,#main_nav .mega-container .mega-menu-title+ul{margin-left:0;margin-right:0;}
+#main_nav .mega-container a{text-transform:capitalize;font-size:14px;padding:0;line-height:30px;}
+#main_nav>ul>li>ul{padding:30px;}
+#main_nav>ul>li>ul a{padding:0 0 10px;text-transform:capitalize;line-height:30px;font-size:14px;}
+#main_nav>ul>li>ul li:last-child a{padding-bottom:0;}
+#main_nav .mega-container .column{padding-left:30px;padding-right:15px;border-right:1px solid #ebebeb;}
+#main_nav .mega-container .column:first-child{padding-left:15px;}
+#main_nav .mega-container .column.last,#main_nav .mega-container .column:last-child{border-right:0;}
+#main_nav .mega-container .column-3{width:25%;}
+#main_nav .mega-container .fullwidth-banner{width:100%;padding-left:15px;padding-top:40px;}
+#main_nav .mega-container .fullwidth-banner img{width:100%;}
+#main_nav .mega-container .fullwidth-banner img:hover{-webkit-transform:scale(1.09);-ms-transform:scale(1.09);transform:scale(1.09);}
+.main-nav-area{z-index:99;}
+/*! CSS Used from: https://template.hasthemes.com/pebona/pebona/assets/css/responsive.css */
+@media only screen and (max-width: 991px){
+#main_nav{border-color:#434343;}
+#main_nav .menu-toggle{color:#fff;}
+#main_nav>ul>li a{color:#fff;}
+#main_nav>ul li.has-sub a span::after,#main_nav .mega a span::after{display:none;}
+#main_nav .mega-container .mega-menu-title,#main_nav .mega-container .mega-menu-title+ul{margin-left:15px;margin-right:15px;}
+#main_nav>ul>li>ul{padding:0 15px;}
+#main_nav .mega-container li{margin-right:0;}
+#main_nav .mega-container .column{width:100%;border-right:0;padding-left:15px;}
+#main_nav .mega-container .fullwidth-banner{padding:0;}
+#main_nav .mega-container .fullwidth-banner a{width:100%;}
+#main_nav .mega-container .fullwidth-banner img{padding-bottom:0;}
+.main-nav-area{background:#434343;text-align:left;}
+.main-nav-area .menu-toggle{color:#fff;position:relative;cursor:pointer;padding-left:0;padding-right:0;}
+.main-nav-area .menu-toggle::after{content:"\f078";font-family:FontAwesome;position:absolute;right:0;top:48%;height:13px;font-size:12px;margin-top:-6.5px;color:#fff;-webkit-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
+}
+/*! CSS Used fontfaces */
+@font-face{font-family:'FontAwesome';src:url('https://template.hasthemes.com/pebona/pebona/assets/fonts/fontawesome-webfont.eot?v=4.7.0');src:url('https://template.hasthemes.com/pebona/pebona/assets/fonts/fontawesome-webfont.eot#iefix&v=4.7.0') format('embedded-opentype'),url('https://template.hasthemes.com/pebona/pebona/assets/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('https://template.hasthemes.com/pebona/pebona/assets/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('https://template.hasthemes.com/pebona/pebona/assets/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('https://template.hasthemes.com/pebona/pebona/assets/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXO61F3f.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXq61F3f.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXy61F3f.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXC61F3f.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnX661A.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXO61F3f.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXq61F3f.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXy61F3f.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXC61F3f.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnX661A.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXO61F3f.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXq61F3f.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXy61F3f.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXC61F3f.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnX661A.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXO61F3f.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXq61F3f.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXy61F3f.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXC61F3f.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnX661A.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXO61F3f.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXq61F3f.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXy61F3f.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnXC61F3f.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:italic;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWEBXyIfDnIV7nEnX661A.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/rubik/v14/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
