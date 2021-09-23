@@ -1193,7 +1193,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 var slidesPerViewMd = $this.data("md-items");
                 var slidesPerViewLg = $this.data("lg-items");
                 var slidesPerViewXl = $this.data("xl-items");
-                var slidesPerView = $this.data("items");
+                var slidesPerView = 4;
 
                 var slidesCenterMode = $this.data("center");
                 var slidesArrows = $this.data("arrows");
