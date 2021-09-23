@@ -49,13 +49,14 @@ Route::post('/password/reset/email/submit', 'HomeController@reset_password_with_
 Route::post('/language', 'LanguageController@changeLanguage')->name('language.change');
 Route::post('/currency', 'CurrencyController@changeCurrency')->name('currency.change');
 
+//forgot password route
+Route::get('/users/forgot-password', 'HomeController@forgotPassword')->name('user.forgot_password');
+
 Route::get('/social-login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.login');
 Route::get('/social-login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
 Route::get('/users/login', 'HomeController@login')->name('user.login');
 Route::get('/users/registration', 'HomeController@registration')->name('user.registration');
 
-//forgot password blade
-Route::get('/users/forgot-password', 'HomeController@forgotPassword')->name('user.forgot_password');
 
 //Route::post('/users/login', 'HomeController@user_login')->name('user.login.submit');
 Route::post('/users/login/cart', 'HomeController@cart_login')->name('cart.login.submit');
