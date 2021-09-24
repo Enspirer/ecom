@@ -101,59 +101,97 @@
                                 <div class="dropdown-menu open" aria-labelledby="dropdownMenuButton1">
                                     <div class="shopping-cart-content">
                                         <ul class="list-unstyled">
-                                            @foreach($cart as $key => $cartItem)
-                                                @php
-                                                    $product = \App\Product::find($cartItem['product_id']);
-                                                    $total = $total + $cartItem['price'] * $cartItem['quantity'];
-                                                @endphp
-                                                <li class="single-cart-item media mb-3 border-bottom p-2 position-relative">
-                                                    <div class="shopping-cart-img mr-3">
-                                                        <a href="{{ route('product', $product->slug) }}">
-                                                            <img class="img-fluid" alt="Cart Item" src="{{ uploaded_asset($product->thumbnail_img) }}" style="height: 5rem;">
-                                                            <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.2rem 0.5rem!important; left: 57px; top:4px; color: white;">1</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="shopping-cart-title flex-grow-1">
-                                                        <p><a href="#">  {{  $product->getTranslation('name')  }}</a></p>
-                                                        <p class="cart-price">$120.00</p>
-                                                        <div class="product-attr">
-                                                            <span>Size: S</span>
-                                                            <span>Color: Black</span>
+                                            @if(isset($cart) && count($cart) > 0)
+                                                @foreach($cart as $key => $cartItem)
+                                                    @php
+                                                        $product = \App\Product::find($cartItem['product_id']);
+                                                        $total = $total + $cartItem['price'] * $cartItem['quantity'];
+                                                    @endphp
+                                                    <li class="single-cart-item media mb-3 border-bottom p-2 position-relative">
+                                                        <div class="shopping-cart-img mr-3">
+                                                            <a href="{{ route('product', $product->slug) }}">
+                                                                <img class="img-fluid" alt="Cart Item" src="{{ uploaded_asset($product->thumbnail_img) }}" style="height: 5rem;">
+                                                                <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.2rem 0.5rem!important; left: 57px; top:4px; color: white;">1</span>
+                                                            </a>
                                                         </div>
-                                                    </div>
-                                                    <div class="shopping-cart-delete">
-                                                        <a href="#"><i class="fas fa-times" style="color: gray"></i></a>
-                                                    </div>
-                                                </li>
+                                                        <div class="shopping-cart-title flex-grow-1">
+                                                            <p><a href="#">  {{  $product->getTranslation('name')  }}</a></p>
+                                                            <p class="cart-price">$120.00</p>
+                                                            <div class="product-attr">
+                                                                <span>Size: S</span>
+                                                                <span>Color: Black</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="shopping-cart-delete">
+                                                            <a href="#"><i class="fas fa-times" style="color: gray"></i></a>
+                                                        </div>
+                                                    </li>
 
-                                            @endforeach
+                                                @endforeach
+                                            @else
+
+                                                <h3 style="text-align: center;padding: 30px;color: #818181;">Your Cart is Empty</h3>
+
+
+                                            @endif
+
 
                                         </ul>
-                                        <div class="row px-4">
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <h6 class="font-weight-bold">Sub-Total : </h6>
+                                        @if(isset($cart) && count($cart) > 0)
+                                            <div class="row px-4">
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6 class="font-weight-bold">Sub-Total : </h6>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                                            <h6 class="font-weight-bold" style="color: red">$320.00</h6>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-6 text-right">
-                                                        <h6 class="font-weight-bold" style="color: red">$320.00</h6>
-                                                    </div>
-                                                </div>
 
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <h6 class="font-weight-bold">Total : </h6>
-                                                    </div>
-                                                    <div class="col-6 text-right">
-                                                        <h6 class="font-weight-bold" style="color: red">$800.00</h6>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6 class="font-weight-bold">Total : </h6>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                                            <h6 class="font-weight-bold" style="color: red">$800.00</h6>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row justify-content-center mt-3">
-                                            <a class="cart-btn mr-3" href="cart.html">view cart</a>
-                                            <a class="cart-btn" href="checkout.html">checkout</a>
-                                        </div>
+                                            <div class="row justify-content-center mt-3">
+                                                <a class="cart-btn mr-3" href="cart.html">view cart</a>
+                                                <a class="cart-btn" href="checkout.html">checkout</a>
+                                            </div>
+                                        @else
+                                            <div class="row px-4">
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6 class="font-weight-bold">Sub-Total : </h6>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                                            <h6 class="font-weight-bold" style="color: red">0</h6>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6 class="font-weight-bold">Total : </h6>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                                            <h6 class="font-weight-bold" style="color: red">00</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-3">
+                                                <a class="cart-btn mr-3" href="">view cart</a>
+                                                <a class="cart-btn" href="">checkout</a>
+                                            </div>
+
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>
