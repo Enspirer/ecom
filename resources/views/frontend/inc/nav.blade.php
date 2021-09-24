@@ -32,16 +32,43 @@
             </div>
         </div>
     </div>
+    @php
+        $header_logo = get_setting('header_logo');
+    @endphp
+    @php
+        $total = 0;
+    @endphp
 
     <div class="container mt-2">
         <div class="row align-items-center">
             <div class="col-4">
                 <input type="password" class="form-control border-0 px-0 w-50 d-inline" id="exampleInputPassword1" placeholder="Search for Products"><i class="fas fa-search text-secondary"></i>
             </div>
-
             <div class="col-4 text-center">
-                <img src="{{ url('logo.png') }}" alt="" class="img-fluid">
+                <a href="{{url('/')}}">
+                    @if($header_logo != null)
+                        <img src="{{ uploaded_asset($header_logo) }}" alt="{{ env('APP_NAME') }}" class="img-fluid">
+                    @else
+                        <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" class="img-fluid">
+                    @endif
+                </a>
+
             </div>
+
+            @php
+                if(auth()->user() != null) {
+                    $user_id = Auth::user()->id;
+                    $cart = \App\Cart::where('user_id', $user_id)->get();
+                } else {
+                    $temp_user_id = Session()->get('temp_user_id');
+                    if($temp_user_id) {
+                        $cart = \App\Cart::where('temp_user_id', $temp_user_id)->get();
+                    }
+                }
+
+            @endphp
+
+
 
             <div class="col-4 text-right">
                 <div class="row justify-content-end">
@@ -50,49 +77,57 @@
                             <div class="col-6 cart-dropdown">
                                 <button class="btn border-0 position-relative" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-shopping-cart" style="font-size: 1rem; background-color: #FEF1EF; border-radius: 50px; padding: 20px; color: #FA290B"></i>
-                                    <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.1rem 0.2rem!important; right: 18px; top:4px; color: white;">01</span>
+                                    @if(isset($cart) && count($cart) > 0)
+                                        <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.1rem 0.2rem!important; right: 18px; top:4px; color: white;"> {{ count($cart)}}</span>
+                                    @else
+
+                                    @endif
+
                                 </button>
+
+                                @php
+                                    if(auth()->user() != null) {
+                                        $user_id = Auth::user()->id;
+                                        $cart = \App\Cart::where('user_id', $user_id)->get();
+                                    } else {
+                                        $temp_user_id = Session()->get('temp_user_id');
+                                        if($temp_user_id) {
+                                            $cart = \App\Cart::where('temp_user_id', $temp_user_id)->get();
+                                        }
+                                    }
+
+                                @endphp
+
                                 <div class="dropdown-menu open" aria-labelledby="dropdownMenuButton1">
                                     <div class="shopping-cart-content">
                                         <ul class="list-unstyled">
-                                            <li class="single-cart-item media mb-3 border-bottom p-2 position-relative">
-                                                <div class="shopping-cart-img mr-3">
-                                                    <a href="#">
-                                                        <img class="img-fluid" alt="Cart Item" src="{{ url('index/shirt1.png') }}" style="height: 5rem;">
-                                                        <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.2rem 0.5rem!important; left: 57px; top:4px; color: white;">1</span>
-                                                    </a>
-                                                </div>
-                                                <div class="shopping-cart-title flex-grow-1">
-                                                    <p><a href="#">Rival Field Messenger</a></p>
-                                                    <p class="cart-price">$120.00</p>
-                                                    <div class="product-attr">
-                                                        <span>Size: S</span>
-                                                        <span>Color: Black</span>
+                                            @foreach($cart as $key => $cartItem)
+                                                @php
+                                                    $product = \App\Product::find($cartItem['product_id']);
+                                                    $total = $total + $cartItem['price'] * $cartItem['quantity'];
+                                                @endphp
+                                                <li class="single-cart-item media mb-3 border-bottom p-2 position-relative">
+                                                    <div class="shopping-cart-img mr-3">
+                                                        <a href="{{ route('product', $product->slug) }}">
+                                                            <img class="img-fluid" alt="Cart Item" src="{{ uploaded_asset($product->thumbnail_img) }}" style="height: 5rem;">
+                                                            <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.2rem 0.5rem!important; left: 57px; top:4px; color: white;">1</span>
+                                                        </a>
                                                     </div>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="fas fa-times" style="color: gray"></i></a>
-                                                </div>
-                                            </li>
-                                            <li class="single-cart-item media mb-3 border-bottom p-2 position-relative">
-                                                <div class="shopping-cart-img mr-3">
-                                                    <a href="#">
-                                                        <img class="img-fluid" alt="Cart Item" src="{{ url('index/shirt2.png') }}" style="height: 5rem;">
-                                                        <span class="position-absolute translate-middle rounded-circle" style="background-color: red; padding: 0.2rem 0.5rem!important; left: 57px; top:4px; color: white;">2</span>
-                                                    </a>
-                                                </div>
-                                                <div class="shopping-cart-title flex-grow-1">
-                                                    <p><a href="#">Fusion Backpack</a></p>
-                                                    <p class="cart-price">$200.00</p>
-                                                    <div class="product-attr">
-                                                        <span>Color: White</span>
-                                                        <span>Accessories: Yes</span>
+                                                    <div class="shopping-cart-title flex-grow-1">
+                                                        <p><a href="#">  {{  $product->getTranslation('name')  }}</a></p>
+                                                        <p class="cart-price">$120.00</p>
+                                                        <div class="product-attr">
+                                                            <span>Size: S</span>
+                                                            <span>Color: Black</span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="fas fa-times" style="color: gray"></i></a>
-                                                </div>
-                                            </li>
+                                                    <div class="shopping-cart-delete">
+                                                        <a href="#"><i class="fas fa-times" style="color: gray"></i></a>
+                                                    </div>
+                                                </li>
+
+                                            @endforeach
+
                                         </ul>
                                         <div class="row px-4">
                                             <div class="col-12">
@@ -255,19 +290,15 @@
         </div>
     </nav> -->
 
+
+
     <div class="main-nav-area bgc-white">
                 <div class="container">
                     <nav id="main_nav" class="stellarnav desktop"><a href="#" class="menu-toggle full"><i class="fa fa-bars"></i> Menu</a>
                         <ul>
-                            <li class="has-sub active"><a href="index.html"><span>Home</span></a>
-                                <ul class="mega-container">
-                                    <li class="active"><a href="index.html">Home Page 1</a></li>
-                                    <li><a href="index-2.html">Home Page 2</a></li>
-                                    <li><a href="index-3.html">Home Page 3</a></li>
-                                    <li><a href="index-4.html">Home Page 4</a></li>
-                                    <li><a href="index-5.html">Home Page 5</a></li>
-                                </ul>
-                            <a class="dd-toggle" href="#"><i class="fa fa-plus"></i></a></li>
+                            <li class="active">
+                                <a href="{{url('/')}}"><span>Home</span></a>
+                            </li>
                             <li class="mega has-sub" data-columns="4"><a href="shop-grid.html"><span>Shop</span></a>
                                 <ul class="mega-container" style="left: 0px; max-width: 100%;">
                                     <li class="has-sub column column-3"><a href="#" class="mega-menu-title"><h3>Shop pages 01</h3></a>

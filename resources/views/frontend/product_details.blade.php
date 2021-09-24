@@ -33,16 +33,12 @@
             </div>
 
             <div class="col-6">
-                <h5>Men's Shirt New Design</h5>
+                <h5> {{ $detailedProduct->getTranslation('name') }}</h5>
                 <div class="row">
-                    <div class="col-7">
+                    <div class="col-12">
                         <div class="row align-items-center">
                                 <div class="col-4">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                                    {{ renderStarRating($detailedProduct->rating) }}
                             </div>
                             <div class="col-4">
                                 <i class="fas fa-comment-alt"></i> 2 Reviews
