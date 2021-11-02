@@ -25,7 +25,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('featured')->default(0);
             $table->integer('top')->default(0);
             $table->integer('digital')->default(0);
-            $table->text('slug')->index()->nullable();
+            $table->text('slug')->nullable();
             $table->text('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->timestamps();
